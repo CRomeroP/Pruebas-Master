@@ -13,4 +13,8 @@ int main()
 	str2.clear();
 	std::cout << str2 << " " << str2.length() << std::endl;
 	std::cin.ignore();
+	str1.~String();
+	str2.~String();
+	str3.~String();
+	return 0;
 }

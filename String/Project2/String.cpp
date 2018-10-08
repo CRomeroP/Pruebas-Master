@@ -43,7 +43,7 @@ std::ostream& operator<< (std::ostream& os, const String& str)
 {
 	if (str.length() > 0)
 	{
-		for (unsigned j = 0; j < str.length(); j++)
+		for (int j = 0; j < str.length(); j++)
 			os << str[j];
 	}
 	else os << "";
@@ -61,23 +61,24 @@ std::istream& operator>> (std::istream& is, String& str)
 	return is;
 }
 
-String operator+ (const String& lhs, const String& rhs)
+String String::operator+ (const String& rhs)
 {
-	int length = lhs.length() + rhs.length();
+	int length = size + rhs.length();
 	std::cout << length << std::endl;
 	char* aux = new char;
-	std::cout << aux << std::endl;
+	std::cout << *aux << std::endl;
 
-	for (unsigned j = 0; j < lhs.length(); ++j)
+	for (int j = 0; j < size; ++j)
 	{
-		std::cout << j << " " << lhs.word[j] << std::endl;
-		aux[j] = lhs.word[j];
+		std::cout << j << " " << word[j] << std::endl;
+		aux[j] = word[j];
 	}
-	std::cout << aux << std::endl;
-	for (unsigned i = 0; i < rhs.length(); ++i)
-		aux[lhs.length() + i] = rhs[i];
-	std::cout << aux << std::endl;
+	std::cout << *aux << std::endl;
+	for (int i = 0; i < rhs.length(); ++i)
+		aux[size + i] = rhs[i];
+	std::cout << *aux << std::endl;
 	String retVal(aux);
+
 	return retVal;
 }
 
@@ -86,18 +87,18 @@ bool operator== (const String& lhs, const String& rhs)
 	if (lhs.length() != rhs.length()) return false;
 
 	int cap = lhs.length();
-	unsigned   n = 0;
+	int   n = 0;
 	while ((n < cap) && (lhs[n] == rhs[n])) n++;
 	return (n == cap);
 }
 
-char String::operator[] (unsigned j) const
+char String::operator[] (int j) const
 {
 	if (j >= size) throw 1;
 	return word[j];
 }
 
-char& String::operator[] (unsigned j)
+char& String::operator[] (int j)
 {
 	if (j >= size) throw 1;
 	return word[j];
