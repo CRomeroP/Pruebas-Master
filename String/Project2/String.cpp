@@ -64,19 +64,19 @@ std::istream& operator>> (std::istream& is, String& str)
 String String::operator+ (const String& rhs)
 {
 	int length = size + rhs.length();
-	std::cout << length << std::endl;
+	//std::cout << length << std::endl;
 	char* aux = new char;
-	std::cout << *aux << std::endl;
+	//std::cout << *aux << std::endl;
 
 	for (int j = 0; j < size; ++j)
 	{
-		std::cout << j << " " << word[j] << std::endl;
+		//std::cout << j << " " << word[j] << std::endl;
 		aux[j] = word[j];
 	}
-	std::cout << *aux << std::endl;
+	//std::cout << *aux << std::endl;
 	for (int i = 0; i < rhs.length(); ++i)
 		aux[size + i] = rhs[i];
-	std::cout << *aux << std::endl;
+	//std::cout << *aux << std::endl;
 	String retVal(aux);
 
 	return retVal;
