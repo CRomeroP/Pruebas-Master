@@ -65,7 +65,7 @@ String String::operator+ (const String& rhs)
 {
 	int length = size + rhs.length();
 	//std::cout << length << std::endl;
-	char* aux = new char;
+	char* aux = new char[length+1];
 	//std::cout << *aux << std::endl;
 
 	for (int j = 0; j < size; ++j)
