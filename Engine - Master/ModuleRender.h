@@ -21,4 +21,6 @@ public:
 
 private:
 	void* context;
+	bool show_demo_window;
+	bool show_another_window;
 };

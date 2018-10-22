@@ -5,6 +5,7 @@
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
 #include "ModuleRenderExercise.h"
+#include "ModuleImGui.h"
 
 using namespace std;
 
@@ -15,7 +16,8 @@ Application::Application()
 	modules.push_back(renderer = new ModuleRender());
 	modules.push_back(textures = new ModuleTextures());
 	modules.push_back(input = new ModuleInput());
-    modules.push_back(exercise = new ModuleRenderExercise());
+    //modules.push_back(exercise = new ModuleRenderExercise());
+	modules.push_back(imgui = new ModuleImGui());
 }
 
 Application::~Application()
